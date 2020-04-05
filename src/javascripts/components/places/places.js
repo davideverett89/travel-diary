@@ -10,8 +10,8 @@ const printPlaces = () => {
   placeData.getPlacesByUid(myUid)
     .then((places) => {
       let domString = '';
-      domString += '<h1 class="display-4">My Places</h1>';
-      domString += '<div class="d-flex flex-wrap">';
+      domString += '<h1 class="display-4 text-center">My Places</h1>';
+      domString += '<div class="row d-flex flex-wrap">';
       places.forEach((place) => {
         domString += singlePlaceComponent.makeSinglePlaceCard(place);
       });
