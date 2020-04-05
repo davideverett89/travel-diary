@@ -1,0 +1,14 @@
+{
+    "entry1" : {
+      "placeId": "place1",
+      "text": "Hong Kong was amazing!"
+    },
+    "entry2" : {
+      "placeId": "place2",
+      "text": "Berlin was amazing!"
+    },
+    "entry3": {
+      "placeId": "place6",
+      "text": "I really want to go to Cyprus sometime!"
+    }
+  }
