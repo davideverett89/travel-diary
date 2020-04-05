@@ -6,7 +6,22 @@
     <title>Travel Diary</title>
 </head>
 <body>
-    <button class="btn btn-warning">HELP</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href=""><i class="far fa-compass btn-outline-light"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#logout-section" aria-controls="logout-section" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="logout-section">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <button id="logout-button" class="p-2 nav-link btn btn-light disappear">Logout</button>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <div id="auth" class="text-center mt-5"></div>
+    <div id="places" class="disappear"></div>
     
 </body>
 </html>
