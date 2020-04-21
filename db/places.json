@@ -3,42 +3,42 @@
         "title": "Hong Kong",
         "description": "A bustling, special administrative region south of mainland China.",
         "image": "https://www.juventus.com/media/images/news-images/2019-20/comunicati-ufficiali/hong_kong01.jpg",
-        "beenThere?": true,
+        "beenThere": true,
         "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
       "place2" : {
         "title": "Berlin",
         "description": "The capital city of Germany.",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Aerial_view_of_Berlin_%2832881394137%29.jpg/1200px-Aerial_view_of_Berlin_%2832881394137%29.jpg",
-        "beenThere?": true,
+        "beenThere": true,
         "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
       "place3" : {
         "title": "Shanghai",
         "description": "Mainland China's largest city and global financial hub.",
         "image": "https://www.travelchinaguide.com/images/photogallery/2009/0601161148.jpg",
-        "beenThere?": true,
+        "beenThere": true,
         "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
       "place4" : {
         "title": "Dresden",
         "description": "Dresden, capital of the eastern German state of Saxony, is distinguished by the celebrated art museums and classic architecture of its reconstructed old town.",
         "image": "https://velvetescape.com/wp-content/uploads/2018/03/IMG_7684-1280x920.jpg",
-        "beenThere?": true,
+        "beenThere": true,
         "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
       "place5" : {
         "title": "Los Angeles",
         "description": "Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry.",
         "image": "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150428180845-lead-los-angeles-skyline.jpg",
-        "beenThere?": true,
+        "beenThere": true,
         "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
      "place6" : {
         "title": "Cyprus",
         "description": "Cyprus, officially the Republic of Cyprus, is an island country in the Eastern Mediterranean.",
         "image": "https://media.worldnomads.com/travel-safety/cyprus/ayia-napa-cyprus-unsplash.jpg",
-        "beenThere?":  false,
+        "beenThere":  false,
         "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     }
   }

@@ -1,14 +1,17 @@
 {
     "entry1" : {
       "placeId": "place1",
-      "text": "Hong Kong was amazing!"
+      "text": "Hong Kong was amazing!",
+      "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
     "entry2" : {
       "placeId": "place2",
-      "text": "Berlin was amazing!"
+      "text": "Berlin was amazing!",
+      "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
     "entry3": {
       "placeId": "place6",
-      "text": "I really want to go to Cyprus sometime!"
+      "text": "I really want to go to Cyprus sometime!",
+      "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     }
   }

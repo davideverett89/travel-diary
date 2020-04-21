@@ -1,5 +1,10 @@
 .place-separator {
-    margin: 15px 0;    
+    margin: 15px 0;
+    i {
+        position: absolute;
+        left: 10px;
+        top: 8px;
+    }   
     img {
         width: 200px;
         height: 200px;
