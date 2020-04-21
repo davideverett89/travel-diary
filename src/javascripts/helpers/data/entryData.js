@@ -8,13 +8,19 @@ const getEntries = () => new Promise((resolve, reject) => {
     .then((response) => {
       const theseEntries = response.data;
       const entries = [];
-      Object.keys(theseEntries).forEach((entryId) => {
-        theseEntries[entryId].id = entryId;
-        entries.push(theseEntries[entryId]);
-      });
+      if (theseEntries) {
+        Object.keys(theseEntries).forEach((entryId) => {
+          theseEntries[entryId].id = entryId;
+          entries.push(theseEntries[entryId]);
+        });
+      }
       resolve(entries);
     })
     .catch((err) => reject(err));
 });
 
-export default { getEntries };
+const setEntry = (newEntry) => axios.post(`${baseUrl}/entries.json`, newEntry);
+
+const deleteEntry = (entryId) => axios.delete(`${baseUrl}/entries/${entryId}.json`);
+
+export default { getEntries, setEntry, deleteEntry };

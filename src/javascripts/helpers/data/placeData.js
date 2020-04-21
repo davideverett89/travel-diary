@@ -17,4 +17,22 @@ const getPlacesByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+// const getAllPlaces = () => new Promise((resolve, reject) => {
+//   axios.get(`${baseUrl}/places.json`)
+//     .then((response) => {
+//       const thosePlaces = response.data;
+//       const allPlaces = [];
+//       Object.keys(thosePlaces).forEach((placeId) => {
+//         thosePlaces[placeId].id = placeId;
+//         allPlaces.push(thosePlaces[placeId]);
+//       });
+//       resolve(allPlaces);
+//     })
+//     .catch((err) => reject(err));
+// });
+
+// // const getSinglePlaceById = (placeId) => {
+
+// // };
+
 export default { getPlacesByUid };
