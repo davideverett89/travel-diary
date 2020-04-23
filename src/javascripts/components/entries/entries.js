@@ -1,9 +1,12 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import moment from 'moment';
+
 import utils from '../../helpers/utils';
 import entryComponent from '../singleEntry/singleEntry';
 import placesComponent from '../places/places';
+import editEntryComponent from '../editEntryForm/editEntryForm';
 import entryData from '../../helpers/data/entryData';
 import placeData from '../../helpers/data/placeData';
 
@@ -38,6 +41,11 @@ const removeEntry = (e) => {
     .catch((err) => console.error('There is a problem with deleting an entry', err));
 };
 
+const showEditEntryComponent = (e) => {
+  const entryId = e.target.closest('.card').id;
+  editEntryComponent.buildEditEntryForm(entryId);
+};
+
 const createNewEntry = (e) => {
   e.preventDefault();
   const selectedPlaceId = e.target.closest('.card').id;
@@ -45,6 +53,7 @@ const createNewEntry = (e) => {
   const newEntry = {
     placeId: selectedPlaceId,
     text: entryMessage,
+    time: moment().format('LLLL'),
     uid: firebase.auth().currentUser.uid,
   };
   entryData.setEntry(newEntry)
@@ -57,13 +66,32 @@ const createNewEntry = (e) => {
     .catch((err) => console.error('Problem with adding new diary entry', err));
 };
 
+const editEntry = (e) => {
+  e.preventDefault();
+  const entryId = e.target.closest('.edit-form').id;
+  const editedMessage = $('#edit-text').val();
+  const editedTime = moment().format('LLLL');
+  if (editedMessage) {
+    entryData.modifyEntry(entryId, editedMessage, editedTime)
+      .then(() => {
+        $('#travel-diary-modal').modal('hide');
+        printEntries();
+      })
+      .catch((err) => console.error('There is a problem with editing:', err));
+  }
+};
+
 const entryEvents = () => {
   $('body').on('click', '.entry-submit-button', createNewEntry);
   $('body').on('click', '.entry-delete-button', removeEntry);
+  $('body').on('click', '.entry-edit-button', showEditEntryComponent);
+  $('body').on('click', '#submit-edit-button', editEntry);
 };
 
 const removeEntryEvents = () => {
   $('body').off('click', '.entry-submit-button', createNewEntry);
+  $('body').off('click', '.entry-delete-button', removeEntry);
+  $('body').off('click', '.entry-edit-button', showEditEntryComponent);
 };
 
 export default { printEntries, entryEvents, removeEntryEvents };
