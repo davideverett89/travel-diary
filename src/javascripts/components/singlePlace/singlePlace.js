@@ -1,9 +1,8 @@
 import './singlePlace.scss';
 
 const makeSinglePlaceCard = (place, entryCheck) => {
-  console.error(place);
   let domString = '';
-  domString += '<div class="col-4 place-separator">';
+  domString += '<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 place-separator">';
   domString += `    <div id="${place.id}" class="text-light text-center card my-place h-100 ${entryCheck ? 'bg-warning' : 'bg-secondary'}">`;
   domString += `        <h2>${place.title}</h2>`;
   domString += `        ${place.beenThere ? '<i class="text-success far fa-check-square fa-3x"></i>' : ''}`;

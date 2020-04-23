@@ -19,8 +19,18 @@ const getEntries = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getSingleEntryById = (entryId) => axios.get(`${baseUrl}/entries/${entryId}.json`);
+
 const setEntry = (newEntry) => axios.post(`${baseUrl}/entries.json`, newEntry);
+
+const modifyEntry = (entryId, editedMessage, editedTime) => axios.patch(`${baseUrl}/entries/${entryId}.json`, { newText: editedMessage, newTime: editedTime });
 
 const deleteEntry = (entryId) => axios.delete(`${baseUrl}/entries/${entryId}.json`);
 
-export default { getEntries, setEntry, deleteEntry };
+export default {
+  getEntries,
+  setEntry,
+  deleteEntry,
+  modifyEntry,
+  getSingleEntryById,
+};

@@ -2,16 +2,19 @@
     "entry1" : {
       "placeId": "place1",
       "text": "Hong Kong was amazing!",
+      "time":  "Tuesday, April 07, 2020 9:46 PM",
       "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
     "entry2" : {
       "placeId": "place2",
       "text": "Berlin was amazing!",
+      "time":  "Wednesday, April 08, 2020 7:05 PM",
       "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     },
     "entry3": {
       "placeId": "place6",
       "text": "I really want to go to Cyprus sometime!",
+      "time":  "Friday, April 10, 2020 5:00 PM",
       "uid": "uWqrzq2kFOTCANYz3pnnrOyJtvm2"
     }
   }

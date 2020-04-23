@@ -17,6 +17,8 @@ const getPlacesByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const setPlace = (newPlace) => axios.post(`${baseUrl}/places.json`, newPlace);
+
 // const getAllPlaces = () => new Promise((resolve, reject) => {
 //   axios.get(`${baseUrl}/places.json`)
 //     .then((response) => {
@@ -35,4 +37,4 @@ const getPlacesByUid = (uid) => new Promise((resolve, reject) => {
 
 // // };
 
-export default { getPlacesByUid };
+export default { getPlacesByUid, setPlace };
