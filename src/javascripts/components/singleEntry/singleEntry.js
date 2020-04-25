@@ -2,10 +2,6 @@ import './singleEntry.scss';
 
 const makeEntryBox = (entry, thisEntryPlace) => {
   let domString = '';
-  const newMessageCheck = entry.newText !== undefined;
-  const newTimeCheck = entry.newTime !== undefined;
-  const newMessage = `Edit: ${entry.newText}`;
-  const newTimeMessage = `Edited on ${entry.newTime}`;
   domString += '<div class="col-12 entry-separator">';
   domString += `    <div id="${entry.id}" class="p-3 card bg-warning text-white">`;
   domString += '        <div class="d-inline-flex flex-column">';
@@ -16,12 +12,21 @@ const makeEntryBox = (entry, thisEntryPlace) => {
   domString += '        </div>';
   domString += '        </div>';
   domString += `        <p class="m-2 lead">${entry.text}</p>`;
-  domString += `        <p class="m-2 lead">${newMessageCheck ? newMessage : ''}</p>`;
   domString += `        <p class="m-2">${entry.time}</p>`;
-  domString += `        <p class="m-2"> ${newTimeCheck ? newTimeMessage : ''}</p>`;
   domString += '    </div>';
   domString += '</div>';
   return domString;
 };
 
-export default { makeEntryBox };
+const makePopUpEntryBox = (entry) => {
+  let domString = '';
+  domString += '<div class="col-12 entry-separator">';
+  domString += '  <div class="p-2 card bg-warning text-white">';
+  domString += `    <p class="m-2 lead">${entry.text}</p>`;
+  domString += `    <p class="m-2">${entry.time}</p>`;
+  domString += '  </div>';
+  domString += '</div>';
+  return domString;
+};
+
+export default { makeEntryBox, makePopUpEntryBox };

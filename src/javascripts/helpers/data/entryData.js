@@ -19,11 +19,27 @@ const getEntries = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
+const getEntriesByPlaceId = (placeId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/entries.json?orderBy="placeId"&equalTo="${placeId}"`)
+    .then((response) => {
+      const thisPlaceEntires = response.data;
+      const entries = [];
+      if (thisPlaceEntires) {
+        Object.keys(thisPlaceEntires).forEach((entryId) => {
+          thisPlaceEntires[entryId].id = entryId;
+          entries.push(thisPlaceEntires[entryId]);
+        });
+      }
+      resolve(entries);
+    })
+    .catch((err) => reject(err));
+});
+
 const getSingleEntryById = (entryId) => axios.get(`${baseUrl}/entries/${entryId}.json`);
 
 const setEntry = (newEntry) => axios.post(`${baseUrl}/entries.json`, newEntry);
 
-const modifyEntry = (entryId, editedMessage, editedTime) => axios.patch(`${baseUrl}/entries/${entryId}.json`, { newText: editedMessage, newTime: editedTime });
+const modifyEntry = (entryId, editedMessage, editedTime) => axios.patch(`${baseUrl}/entries/${entryId}.json`, { text: editedMessage, time: editedTime });
 
 const deleteEntry = (entryId) => axios.delete(`${baseUrl}/entries/${entryId}.json`);
 
@@ -33,4 +49,5 @@ export default {
   deleteEntry,
   modifyEntry,
   getSingleEntryById,
+  getEntriesByPlaceId,
 };
